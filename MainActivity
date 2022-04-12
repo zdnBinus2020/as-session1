@@ -1,0 +1,31 @@
+package com.example.session1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        TextView tvText = findViewById(R.id.tvText); //panggil berdasarkan ID yang di inisialisasi di xml
+        Button btnButton = findViewById(R.id.btnButton);
+        EditText etText = findViewById(R.id.etText);
+
+        btnButton.setOnClickListener(new View.OnClickListener() { // button berfungsi untuk menerima tugas
+            @Override
+            public void onClick(View view) { // mau ngapain kalau sudah di klik
+                tvText.setText(etText.getText().toString()); // menentukan tvText akan diunah teks nya menjadi apapun inputan dari etText
+
+            }
+        });
+
+    }
+}
